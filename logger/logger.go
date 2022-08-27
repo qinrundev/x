@@ -50,6 +50,8 @@ func MustGetLogger(config *LoggerConfig) *zap.Logger {
 		panic(err)
 	}
 
+	logger = zapLogger
+
 	return zapLogger
 }
 
