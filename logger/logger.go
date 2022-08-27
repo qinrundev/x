@@ -28,6 +28,10 @@ func L() *zap.Logger {
 	return l
 }
 
+func S() *zap.SugaredLogger {
+	return L().Sugar()
+}
+
 func MustGetLogger(config *LoggerConfig) *zap.Logger {
 	logLevel := parseLogLevel(config.Level)
 	// set logger level
