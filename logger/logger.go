@@ -2,6 +2,7 @@ package logger
 
 import (
 	"strings"
+	"sync"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -13,6 +14,18 @@ type LoggerConfig struct {
 	Level         string `mapstructure:"level" json:"level" yaml:"level"`
 	DisableCaller bool   `mapstructure:"disable-caller" json:"disableCaller" yaml:"disable-caller"`
 	Development   bool   `mapstructure:"development" json:"development" yaml:"development"`
+}
+
+var (
+	_globalMu sync.RWMutex
+	logger    *zap.Logger
+)
+
+func L() *zap.Logger {
+	_globalMu.RLock()
+	l := logger
+	_globalMu.RUnlock()
+	return l
 }
 
 func MustGetLogger(config *LoggerConfig) *zap.Logger {
