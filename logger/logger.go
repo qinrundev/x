@@ -9,8 +9,10 @@ import (
 )
 
 type LoggerConfig struct {
-	Format        string `mapstructure:"format" json:"format" yaml:"format"`
-	ServiceName   string `mapstructure:"service-name" json:"serviceName" yaml:"service-name"`
+	// Format can be json or console
+	Format      string `mapstructure:"format" json:"format" yaml:"format"`
+	ServiceName string `mapstructure:"service-name" json:"serviceName" yaml:"service-name"`
+	// Level, debug, info, warning, error
 	Level         string `mapstructure:"level" json:"level" yaml:"level"`
 	DisableCaller bool   `mapstructure:"disable-caller" json:"disableCaller" yaml:"disable-caller"`
 	Development   bool   `mapstructure:"development" json:"development" yaml:"development"`
