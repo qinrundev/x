@@ -34,9 +34,8 @@ func MustLoadConfig(envPrefix string, configPath *string, configurations interfa
 	v.SetEnvPrefix(envPrefix)
 	v.AutomaticEnv()
 	// FOO-BAR => FOO_BAR
-	v.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	// FOO.BAR => FOO_BAR
-	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
+	v.SetEnvKeyReplacer(strings.NewReplacer("-", "_", ".", "_"))
 
 	// Read Config from disk and env vars
 	err := v.ReadInConfig()
