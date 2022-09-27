@@ -1,4 +1,4 @@
-package utils
+package hash
 
 import (
 	"github.com/mitchellh/hashstructure/v2"
