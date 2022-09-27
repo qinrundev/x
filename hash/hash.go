@@ -11,6 +11,7 @@ func Hash(val interface{}) string {
 	if err != nil {
 		return ""
 	}
+
 	return strconv.Itoa(int(hash))
 }
 
