@@ -3,7 +3,7 @@ module github.com/qinrundev/x
 go 1.17
 
 require (
-    github.com/mitchellh/hashstructure/v2 v2.0.2
+    github.com/mitchellh/hashstructure/v2 v2.0.2 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
