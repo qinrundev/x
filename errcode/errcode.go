@@ -52,6 +52,7 @@ func GetMsg(code string) string {
 	if ok {
 		return message
 	}
+
 	return msg[ErrUnknown]
 }
 
