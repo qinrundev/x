@@ -7,4 +7,7 @@ var (
 	ConfigFileName = "CONFIG_FILE_NAME"
 	//DefaultConfigPath is the default place where we are looking for configuration
 	DefaultConfigPath = "/etc/viper.yml"
+
+	IAMServiceName        = "IAM"
+	PredictionServiceName = "PREDICTION"
 )
